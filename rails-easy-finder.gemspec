@@ -4,16 +4,20 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rails-easy-finder/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "rails-easy-finder"
+  gem.name          = 'rails-easy-finder'
   gem.version       = Rails::Easy::Finder::VERSION
-  gem.authors       = ["Benjamin Falk"]
-  gem.email         = ["benjamin.falk@yahoo.com"]
+  gem.authors       = ['Benjamin Falk']
+  gem.email         = %w(benjamin.falk@yahoo.com)
   gem.description   = %q{TODO: Write a gem description}
   gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.homepage      = ''
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
+  gem.require_paths = %w(lib)
+
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'cucumber'
 end
