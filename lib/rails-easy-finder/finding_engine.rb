@@ -20,7 +20,7 @@ module Rails
 
       def results
         @scoped = @scope.scoped
-        instance_eval &@solution
+        instance_eval &@solution if @solution
         @scoped
       end
 
@@ -33,7 +33,6 @@ module Rails
       def build_param_predicate(param)
         define_singleton_method "the_#{param}" do |field = nil|
           field ? @bind.send(param).send(field) : @bind.send(param)
-          #field ? "#{param}.#{field}" : param.to_s
         end
         singleton_class.class_eval do
           alias_method "of_the_#{param}", "the_#{param}"
