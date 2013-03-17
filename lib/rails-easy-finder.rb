@@ -5,22 +5,14 @@ module Rails
   module Easy
     module Finder
 
-      def define_finder(name,&block)
-
-        finder_sets[name] ||= []
-        define_method(name) do
-          self.class.send( :finder_sets )[name].each do |set|
-
-          end
+      def it_finds(what,&block)
+        finder = Easy::FindingEngine.new(what)
+        finder.uses_the_solution &block
+        define_method what.to_sym do
+          finder.bind self
+          finder.results
         end
       end
-
-      private
-
-      def finder_sets
-        @finder_sets ||= {}
-      end
-
 
     end
   end
