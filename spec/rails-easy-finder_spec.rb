@@ -22,7 +22,7 @@ module Rails
 
           context 'when given a scope' do
             before :each do
-              @scope.should_receive(:to_sym).and_return(:people)
+              @scope.should_receive(:to_s).and_return('people')
             end
 
             it 'creates a finder method for an instance' do
