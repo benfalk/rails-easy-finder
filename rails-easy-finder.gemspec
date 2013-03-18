@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Rails::Easy::Finder::VERSION
   gem.authors       = ['Benjamin Falk']
   gem.email         = %w(benjamin.falk@yahoo.com)
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ''
+  gem.description   = %q{Simple way to write complex chained model scopes together}
+  gem.summary       = %q{Simple way to write complex chained model scopes together}
+  gem.homepage      = 'https://github.com/benfalk/rails-easy-finder'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
